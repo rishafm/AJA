@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Al Jazeera Academy Fees 2026-2027 Selector</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  label { display: block; margin-top: 10px; }
+  select { width: 200px; padding: 5px; margin-top: 5px; }
+  #result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; width: 300px; }
+</style>
+</head>
+<body>
+ 
+<h2>School Fees Selector</h2>
+
+<label for="voucherStatus">Voucher Status:</label>
+<select id="voucherStatus">
+  <option value="">Select Voucher Status</option>
+  <option value="Voucher Sponsored (Qatari Only)">Voucher Sponsored (Qatari Only)</option>
+  <option value="Non Voucher (Paid by Parents)">Non Voucher (Paid by Parents)</option>
+</select>
+
+<label for="yearGroup">Year Group:</label>
+<select id="yearGroup">
+  <option value="">Select Year Group</option>
+  <option value="KG1">KG1</option>
+  <option value="KG2">KG2</option>
+  <option value="Year 1 -6">Year 1 -6</option>
+  <option value="Year 7 -9">Year 7 -9</option>
+  <option value="Year 10">Year 10</option>
+  <option value="Year 11">Year 11</option>
+  <option value="Year 12 to 13">Year 12 to 13</option>
+</select>
+
+<button onclick="showFees()">Show Fees</button>
+
+<div id="result"></div>
+
+<script>
+const data = [
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "KG1", fullYear: 30587, coveredByVoucher: 28000, payableFullYear: 2587, term1: 1562, term2: 1025},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "KG2", fullYear: 30587, coveredByVoucher: 28000, payableFullYear: 2587, term1: 1562, term2: 1025},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "Year 1 -6", fullYear: 40839, coveredByVoucher: 28000, payableFullYear: 12839, term1: 7064, term2: 5775},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "Year 7 -9", fullYear: 51548, coveredByVoucher: 28000, payableFullYear: 23548, term1: 12848, term2: 10700},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "Year 10", fullYear: 61398, coveredByVoucher: 28000, payableFullYear: 33398, term1: 17773, term2: 15625},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "Year 11", fullYear: 59250, coveredByVoucher: 28000, payableFullYear: 31250, term1: 15625, term2: 15625},
+  {voucher: "Voucher Sponsored (Qatari Only)", year: "Year 12 to 13", fullYear: 63250, coveredByVoucher: 28000, payableFullYear: 35250, term1: 17625, term2: 17625},
+  {voucher: "Non Voucher (Paid by Parents)", year: "KG1", fullYear: 30587, coveredByVoucher: 0, payableFullYear: 30587, term1: 15562, term2: 15025},
+  {voucher: "Non Voucher (Paid by Parents)", year: "KG2", fullYear: 30587, coveredByVoucher: 0, payableFullYear: 30587, term1: 15562, term2: 15025},
+  {voucher: "Non Voucher (Paid by Parents)", year: "Year 1 -6", fullYear: 40839, coveredByVoucher: 0, payableFullYear: 40839, term1: 21064, term2: 19775},
+  {voucher: "Non Voucher (Paid by Parents)", year: "Year 7 -9", fullYear: 51548, coveredByVoucher: 0, payableFullYear: 51548, term1: 26848, term2: 24700},
+  {voucher: "Non Voucher (Paid by Parents)", year: "Year 10", fullYear: 61398, coveredByVoucher: 0, payableFullYear: 61398, term1: 31773, term2: 29625},
+  {voucher: "Non Voucher (Paid by Parents)", year: "Year 11", fullYear: 59250, coveredByVoucher: 0, payableFullYear: 59250, term1: 29625, term2: 29625},
+  {voucher: "Non Voucher (Paid by Parents)", year: "Year 12 to 13", fullYear: 63250, coveredByVoucher: 0, payableFullYear: 63250, term1: 31625, term2: 31625}
+];
+
+function showFees() {
+  const voucherStatus = document.getElementById('voucherStatus').value;
+  const yearGroup = document.getElementById('yearGroup').value;
+  const resultDiv = document.getElementById('result');
+  
+  if (!voucherStatus || !yearGroup) {
+    resultDiv.innerHTML = "Please select both options.";
+    return;
+  }
+  
+  const item = data.find(d => d.voucher === voucherStatus && d.year === yearGroup);
+  
+  if (item) {
+    resultDiv.innerHTML = `
+      <strong>Full Year Fees:</strong> ${item.fullYear.toFixed(2)}<br/>
+      <strong>Covered By Voucher:</strong> ${item.coveredByVoucher.toFixed(2)}<br/>
+      <strong>Payable By Parents (Full Year):</strong> ${item.payableFullYear.toFixed(2)}<br/>
+      <strong>1st Term:</strong> ${item.term1.toFixed(2)}<br/>
+      <strong>2nd Term:</strong> ${item.term2.toFixed(2)}
+    `;
+  } else {
+    resultDiv.innerHTML = "No data found for selected options.";
+  }
+}
+</script>
+
+</body>
+</html>
