@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Al Jazeera Academy — Fees 2026–2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #f6f2ec;
+    --color-surface: #fffcf7;
+    --color-surface-alt: #ece6db;
+    --color-ink: #2c2520;
+    --color-ink-muted: #7a6e63;
+    --color-accent: #1a6b5a;
+    --color-accent-light: #e8f3f0;
+    --color-accent-dark: #0e4d3f;
+    --color-gold: #c4953a;
+    --color-gold-light: #faf3e4;
+    --color-border: #ddd5c9;
+    --color-voucher-tag: #1a6b5a;
+    --color-nonvoucher-tag: #8b5e3c;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --shadow-card: 0 1px 3px rgba(44,37,32,0.06), 0 8px 24px rgba(44,37,32,0.04);
+    --shadow-card-hover: 0 2px 8px rgba(44,37,32,0.08), 0 16px 40px rgba(44,37,32,0.07);
+    --shadow-dropdown: 0 12px 36px rgba(44,37,32,0.12);
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Decorative background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(26,107,90,0.04), transparent),
+      radial-gradient(ellipse 60% 50% at 85% 80%, rgba(196,149,58,0.05), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeUp 0.6s var(--ease-out) 0.1s forwards;
+  }
+
+  .header-badge svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    color: var(--color-ink);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.7s var(--ease-out) 0.2s forwards;
+  }
+
+  .header p {
+    font-size: 15px;
+    color: var(--color-ink-muted);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.7s var(--ease-out) 0.35s forwards;
+  }
+
+  /* ── Selector Panel ── */
+  .selector-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px 32px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.7s var(--ease-out) 0.45s forwards;
+    overflow: visible;
+  }
+
+  .selector-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .selector-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .field-group { position: relative; }
+
+  .field-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-bottom: 8px;
+  }
+
+  /* Native Select */
+  .native-select {
+    display: block;
+    width: 100%;
+    padding: 14px 40px 14px 16px;
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%237a6e63' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px;
+  }
+
+  .native-select:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-surface);
+  }
+
+  .native-select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(26,107,90,0.12);
+    background-color: var(--color-surface);
+  }
+
+  .native-select.placeholder {
+    color: var(--color-ink-muted);
+  }
+
+  .native-select option {
+    font-size: 15px;
+    padding: 8px;
+    color: var(--color-ink);
+    background: var(--color-surface);
+  }
+
+  /* ── Results ── */
+  .results-area {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.7s var(--ease-out) 0.55s forwards;
+  }
+
+  .result-empty {
+    text-align: center;
+    padding: 56px 24px;
+    background: var(--color-surface);
+    border: 1.5px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .result-empty-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-border);
+    margin-bottom: 16px;
+  }
+
+  .result-empty h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-ink-muted);
+    margin-bottom: 6px;
+  }
+
+  .result-empty p {
+    font-size: 13px;
+    color: var(--color-ink-muted);
+    opacity: 0.7;
+  }
+
+  /* Fee Breakdown Card */
+  .fee-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    animation: cardReveal 0.5s var(--ease-spring) forwards;
+  }
+
+  .fee-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    color: #fff;
+  }
+
+  .fee-card-header-left h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .fee-card-header-left span {
+    font-size: 12px;
+    opacity: 0.75;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .fee-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+  }
+
+  .fee-tag svg { width: 12px; height: 12px; }
+
+  .fee-card-body { padding: 28px; }
+
+  .fee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 520px) {
+    .fee-grid { grid-template-columns: 1fr; }
+  }
+
+  .fee-stat {
+    padding: 18px 20px;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+    animation: statFade 0.4s var(--ease-out) forwards;
+    opacity: 0;
+  }
+
+  .fee-stat:hover {
+    border-color: var(--color-border);
+    transform: translateY(-2px);
+  }
+
+  .fee-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-bottom: 2px;
+  }
+
+  .fee-stat-desc {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-ink-muted);
+    opacity: 0.75;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .fee-disclaimer {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--color-gold-light);
+    border: 1px solid rgba(196,149,58,0.18);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    color: var(--color-ink-muted);
+    line-height: 1.5;
+  }
+
+  .fee-disclaimer svg {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 4px;
+    color: var(--color-gold);
+  }
+
+  .fee-stat-value {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--color-ink);
+    line-height: 1.1;
+  }
+
+  .fee-stat-value .currency {
+    font-size: 15px;
+    color: var(--color-ink-muted);
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  .fee-stat.highlight {
+    background: var(--color-gold-light);
+    border: 1px solid rgba(196,149,58,0.2);
+  }
+
+  .fee-stat.highlight .fee-stat-value {
+    color: var(--color-gold);
+  }
+
+  /* Term Breakdown */
+  .term-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .term-divider span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    white-space: nowrap;
+  }
+
+  .term-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  .term-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 520px) {
+    .term-grid { grid-template-columns: 1fr; }
+  }
+
+  .term-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+    animation: statFade 0.45s var(--ease-out) forwards;
+    opacity: 0;
+  }
+
+  .term-card:hover {
+    border-color: var(--color-border);
+    transform: translateY(-2px);
+  }
+
+  .term-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .term-info-label {
+    font-size: 12px;
+    color: var(--color-ink-muted);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .term-info-value {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--color-ink);
+  }
+
+  .term-info-value .currency {
+    font-size: 13px;
+    color: var(--color-ink-muted);
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  /* Footer note */
+  .footer-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--color-ink-muted);
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes cardReveal {
+    from { opacity: 0; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes statFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .page-wrapper { padding: 32px 16px 60px; }
+    .selector-panel { padding: 24px 20px 20px; }
+    .fee-card-header { padding: 20px; flex-direction: column; align-items: flex-start; }
+    .fee-card-body { padding: 20px; }
+    .fee-stat-value { font-size: 22px; }
+    .term-info-value { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Academic Year 2026–2027
+    </div>
+    <h1>Al Jazeera Academy Fees</h1>
+    <p>Select your voucher status and year group to view a detailed fee breakdown for the upcoming academic year.</p>
+  </div>
+
+  <!-- Selector -->
+  <div class="selector-panel">
+    <div class="selector-grid">
+      <div class="field-group">
+        <label class="field-label" for="voucherSelect">Voucher Status</label>
+        <select id="voucherSelect" class="native-select placeholder" data-name="voucher">
+          <option value="" disabled selected>Select voucher status</option>
+          <option value="Voucher Sponsored (Qatari Only)">Voucher Sponsored (Qatari Only)</option>
+          <option value="Non Voucher (Paid by Parents)">Non Voucher (Paid by Parents)</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="yearGroupSelect">Year Group</label>
+        <select id="yearGroupSelect" class="native-select placeholder" data-name="yearGroup">
+          <option value="" disabled selected>Select year group</option>
+          <option value="KG1">KG1</option>
+          <option value="KG2">KG2</option>
+          <option value="Year 1 -6">Year 1–6</option>
+          <option value="Year 7 -9">Year 7–9</option>
+          <option value="Year 10">Year 10</option>
+          <option value="Year 11">Year 11</option>
+          <option value="Year 12 to 13">Year 12–13</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-area" id="resultsArea">
+    <div class="result-empty" id="emptyState">
+      <svg class="result-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 10h20"/>
+        <path d="M6 16h4"/>
+        <path d="M14 16h4"/>
+      </svg>
+      <h3>Fee breakdown will appear here</h3>
+      <p>Choose your voucher status and year group above</p>
+    </div>
+    <div id="feeCard" style="display:none;"></div>
+  </div>
+
+  <div class="footer-note">
+    All amounts in Qatari Riyal (QAR). Fees are subject to the terms and conditions of Al Jazeera Academy.
+  </div>
+
+</div>
+
+<script>
+const feeData = [
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"KG1",fullYear:30587,coveredByVoucher:28000,payableFullYear:2587,term1:1562,term2:1025},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"KG2",fullYear:30587,coveredByVoucher:28000,payableFullYear:2587,term1:1562,term2:1025},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"Year 1 -6",fullYear:40839,coveredByVoucher:28000,payableFullYear:12839,term1:7064,term2:5775},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"Year 7 -9",fullYear:51548,coveredByVoucher:28000,payableFullYear:23548,term1:12848,term2:10700},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"Year 10",fullYear:61398,coveredByVoucher:28000,payableFullYear:33398,term1:17773,term2:15625},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"Year 11",fullYear:59250,coveredByVoucher:28000,payableFullYear:31250,term1:15625,term2:15625},
+  {voucher:"Voucher Sponsored (Qatari Only)",year:"Year 12 to 13",fullYear:63250,coveredByVoucher:28000,payableFullYear:35250,term1:17625,term2:17625},
+  {voucher:"Non Voucher (Paid by Parents)",year:"KG1",fullYear:30587,coveredByVoucher:0,payableFullYear:30587,term1:15562,term2:15025},
+  {voucher:"Non Voucher (Paid by Parents)",year:"KG2",fullYear:30587,coveredByVoucher:0,payableFullYear:30587,term1:15562,term2:15025},
+  {voucher:"Non Voucher (Paid by Parents)",year:"Year 1 -6",fullYear:40839,coveredByVoucher:0,payableFullYear:40839,term1:21064,term2:19775},
+  {voucher:"Non Voucher (Paid by Parents)",year:"Year 7 -9",fullYear:51548,coveredByVoucher:0,payableFullYear:51548,term1:26848,term2:24700},
+  {voucher:"Non Voucher (Paid by Parents)",year:"Year 10",fullYear:61398,coveredByVoucher:0,payableFullYear:61398,term1:31773,term2:29625},
+  {voucher:"Non Voucher (Paid by Parents)",year:"Year 11",fullYear:59250,coveredByVoucher:0,payableFullYear:59250,term1:29625,term2:29625},
+  {voucher:"Non Voucher (Paid by Parents)",year:"Year 12 to 13",fullYear:63250,coveredByVoucher:0,payableFullYear:63250,term1:31625,term2:31625}
+];
+
+const state = { voucher: '', yearGroup: '' };
+
+function fmt(n) {
+  return n.toLocaleString('en-QA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Native Select Logic
+document.querySelectorAll('.native-select').forEach(select => {
+  select.addEventListener('change', () => {
+    select.classList.remove('placeholder');
+    state[select.dataset.name] = select.value;
+    tryShowFees();
+  });
+});
+
+function tryShowFees() {
+  if (!state.voucher || !state.yearGroup) return;
+  const item = feeData.find(d => d.voucher === state.voucher && d.year === state.yearGroup);
+  if (!item) return;
+
+  const isVoucher = state.voucher.includes('Voucher Sponsored');
+  const yearLabel = state.yearGroup.replace('Year 1 -6','Year 1–6').replace('Year 7 -9','Year 7–9').replace('Year 12 to 13','Year 12–13');
+
+  const tagIcon = isVoucher
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>';
+
+  const tagLabel = isVoucher ? 'Voucher Sponsored' : 'Non-Voucher';
+
+  const voucherRow = isVoucher ? `
+    <div class="fee-stat" style="animation-delay:0.15s">
+      <div class="fee-stat-label">Covered by Voucher</div>
+      <div class="fee-stat-desc">Government Education Subsidy</div>
+      <div class="fee-stat-value"><span class="currency">QAR</span> ${fmt(item.coveredByVoucher)}</div>
+    </div>` : '';
+
+  const html = `
+    <div class="fee-card">
+      <div class="fee-card-header">
+        <div class="fee-card-header-left">
+          <h2>${yearLabel}</h2>
+          <span>Fee Breakdown — Academic Year 2026–2027</span>
+        </div>
+        <div class="fee-tag">${tagIcon} ${tagLabel}</div>
+      </div>
+      <div class="fee-card-body">
+        <div class="fee-grid">
+          <div class="fee-stat" style="animation-delay:0.05s">
+            <div class="fee-stat-label">Full Year Fees</div>
+            <div class="fee-stat-desc">Tuition Fees and Book Fees for the year</div>
+            <div class="fee-stat-value"><span class="currency">QAR</span> ${fmt(item.fullYear)}</div>
+          </div>
+          ${voucherRow}
+          <div class="fee-stat highlight" style="animation-delay:${isVoucher ? '0.25s' : '0.15s'}">
+            <div class="fee-stat-label">Net Amount Payable</div>
+            <div class="fee-stat-desc">Amount due from parents for the full year</div>
+            <div class="fee-stat-value"><span class="currency">QAR</span> ${fmt(item.payableFullYear)}</div>
+          </div>
+        </div>
+
+        <div class="term-divider"><span>Payment Schedule</span></div>
+        <div class="term-grid">
+          <div class="term-card" style="animation-delay:${isVoucher ? '0.35s' : '0.25s'}">
+            <div class="term-number">1</div>
+            <div class="term-info">
+              <div class="term-info-label">First Term</div>
+              <div class="term-info-value"><span class="currency">QAR</span> ${fmt(item.term1)}</div>
+            </div>
+          </div>
+          <div class="term-card" style="animation-delay:${isVoucher ? '0.4s' : '0.3s'}">
+            <div class="term-number">2</div>
+            <div class="term-info">
+              <div class="term-info-label">Second Term</div>
+              <div class="term-info-value"><span class="currency">QAR</span> ${fmt(item.term2)}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fee-disclaimer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Tablet (Year 3 onwards), uniform, and copy books are not included and must be purchased separately.
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById('emptyState').style.display = 'none';
+  const feeCard = document.getElementById('feeCard');
+  feeCard.style.display = 'block';
+  feeCard.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
